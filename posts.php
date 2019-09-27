@@ -40,7 +40,7 @@ include('header.php');
                             <th>Título</th>
                             <th>Autor</th>
                             <th>Categoría</th>
-                            <th>Fecha</th>
+                            <th>Fecha de estreno</th>
                             <th>Texto</th>
                             <th>Actions</th>
                         </tr>
