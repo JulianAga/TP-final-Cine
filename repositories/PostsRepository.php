@@ -1,7 +1,7 @@
 <?php namespace repositories;
 
     use repositories\IRepository as IRepository;
-    use model\Post as Post;
+    use models\Post as Post;
 
     class PostsRepository implements IRepository
     {

@@ -46,25 +46,25 @@ include('header.php');
                         </tr>
                     </thead>
                     <tbody>
-                    <?php //$products = new PostsRepository();
+                    <?php $products = new PostsRepository();
                    //$categories = new CategoriesRepository();
-                                       //$productsArray = $products->getAll(); ?>
+                                       $productsArray = $products->getAll(); ?>
 
                                 
-                                <?php //foreach ($productsArray as $key => $value) {
-			            	        //$Post = $value;
+                                <?php foreach ($productsArray as $key => $value) {
+			            	        $Post = $value;
                                     ?>
 
 
                             <tr>
                             <td><input type="checkbox" name="userschecked[]" /></td>
-                                <td><?php // echo $Post->getID(); ?></td>
+                                <td><?php  echo $Post->getID(); ?></td>
                                     
-                                <td><?php  //echo $Post->getTitle(); ?></td>
-                                <td><?php  //echo $Post->getAuthor(); ?></td>
-                                <td><?php // echo $categories->getByID($Post->getcategory()); ?></td>
-                                <td><?php  //echo $Post->getDate(); ?></td>
-                                <td><?php  //echo $Post->getDescription(); ?></td>
+                                <td><?php  echo $Post->getTitle(); ?></td>
+                                <td><?php  echo $Post->getAuthor(); ?></td>
+                                <td><?php  echo $Post->getcategory(); ?></td>
+                                <td><?php  echo $Post->getDate(); ?></td>
+                                <td><?php  echo $Post->getDescription(); ?></td>
                               
                                 <td>
                                     <a class="btn btn-light" name="btnRemove">
@@ -74,7 +74,7 @@ include('header.php');
                                     </a>
                                 </td>
                             </tr>
-                                <?php //} ?>
+                                <?php } ?>
 
                     </tbody>
                 </table>
@@ -116,19 +116,19 @@ include('header.php');
 
                     <div class="form-group">
                         <label>Autor</label>
-                        <input type="text" disabled value="<?php //echo $user->getUserName(); ?>" class="form-control">
-                        <input type="hidden" name="author" value="<?php //echo $user->getUserName(); ?>" class="form-control">
+                        <input type="text" disabled value="<?php echo $user->getUserName(); ?>" class="form-control">
+                        <input type="hidden" name="author" value="<?php echo $user->getUserName(); ?>" class="form-control">
                     </div>
 
                     <div class="form-group">
                         <label>Categoría</label>
                         <select type="text" class="form-control" name="category">
-                            <option value="1">Politica</option>
-                            <option value="2">Economia</option>
+                            <option value="1">Acción</option>
+                            <option value="2">Drama</option>
                             <option value="3">Policiales</option>
-                            <option value="4">Deportes</option>
-                            <option value="5">Espectaculos</option>
-                            <option value="6">Tecnología</option>
+                            <option value="4">Documentales</option>
+                            <option value="5">Terror</option>
+                            <option value="6">Suspenso</option>
                         </select>
 
                     </div>

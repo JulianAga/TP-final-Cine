@@ -6,8 +6,8 @@ use Config\Autoload as Autoload;
 Autoload::Start();
 
 
-use model\Post as Post;
-use repository\PostsRepository as PostsRepository;
+use models\Post as Post;
+use repositories\PostsRepository as PostsRepository;
 
 
 if($_POST){
