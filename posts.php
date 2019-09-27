@@ -1,8 +1,10 @@
 
 <?php
+  use models\User as User;
+  use repositories\PostsRepository as PostsRepository;
 
 include('header.php');
-    include('nav.php'); 
+    include('nav.php');
     ?>
 
     <main class="p-5">
@@ -46,7 +48,7 @@ include('header.php');
                     <tbody>
                     <?php //$products = new PostsRepository();
                    //$categories = new CategoriesRepository();
-                                       // $productsArray = $products->getAll(); ?>
+                                       //$productsArray = $products->getAll(); ?>
 
                                 
                                 <?php //foreach ($productsArray as $key => $value) {
@@ -114,8 +116,8 @@ include('header.php');
 
                     <div class="form-group">
                         <label>Autor</label>
-                        <input type="text" disabled value="<?php echo $user->getUserName(); ?>" class="form-control">
-                        <input type="hidden" name="author" value="<?php echo $user->getUserName(); ?>" class="form-control">
+                        <input type="text" disabled value="<?php //echo $user->getUserName(); ?>" class="form-control">
+                        <input type="hidden" name="author" value="<?php //echo $user->getUserName(); ?>" class="form-control">
                     </div>
 
                     <div class="form-group">
@@ -127,8 +129,6 @@ include('header.php');
                             <option value="4">Deportes</option>
                             <option value="5">Espectaculos</option>
                             <option value="6">Tecnología</option>
-
-
                         </select>
 
                     </div>
@@ -154,4 +154,4 @@ include('header.php');
         </div>
     </div>
 
-    
+    <?php include('footer.php'); ?>

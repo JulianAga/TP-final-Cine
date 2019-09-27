@@ -16,12 +16,12 @@
         </ul>
         <span class="navbar-text text-white">
             <strong>(Hola <?php 
-         require_once("Config\autoload.php");
 
+         require_once("Config\Autoload.php");
          use Config\Autoload as Autoload;
-
          Autoload::Start();
             session_start(); 
+
             if(isset($_SESSION['loggedUser'])){     
                           $user = $_SESSION['loggedUser'];        
             echo $user->getUsername(); 
