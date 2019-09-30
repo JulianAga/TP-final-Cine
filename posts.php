@@ -10,7 +10,7 @@ include('header.php');
     <main class="p-5">
         <div class="container">
 
-            <h1 class="mb-5">Peliculas en Cartel</h1>
+            <h1 class="mb-5">CINEMAS</h1>
 
 
             <form class="form-inline" action="multiaction.php" method="POST">
@@ -37,12 +37,11 @@ include('header.php');
                         <tr>
                             <th></th>
                             <th>ID</th>
-                            <th>Título</th>
-                            <th>Autor</th>
-                            <th>Categoría</th>
-                            <th>Fecha de estreno</th>
-                            <th>Texto</th>
-                            <th>Actions</th>
+                            <th>Cine</th>
+                            <th>Direccion</th>
+                            <th>Capacidad</th>
+                            <th>Valor de entrada</th>
+                            <th>Eliminar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -52,19 +51,19 @@ include('header.php');
 
                                 
                                 <?php foreach ($productsArray as $key => $value) {
-			            	        $Post = $value;
+			            	        $Cine = $value;
                                     ?>
 
 
                             <tr>
                             <td><input type="checkbox" name="userschecked[]" /></td>
-                                <td><?php  echo $Post->getID(); ?></td>
+                                <td><?php  echo $Cine->getID(); ?></td>
                                     
-                                <td><?php  echo $Post->getTitle(); ?></td>
-                                <td><?php  echo $Post->getAuthor(); ?></td>
-                                <td><?php  echo $Post->getcategory(); ?></td>
-                                <td><?php  echo $Post->getDate(); ?></td>
-                                <td><?php  echo $Post->getDescription(); ?></td>
+                                <td><?php  echo $Cine->getNombre(); ?></td>
+                                <td><?php  echo $Cine->getDireccion(); ?></td>
+                                <td><?php  echo $Cine->getCapacidad(); ?></td>
+                                <!--       <td><?php // echo $Post->getDate(); ?></td> -->
+                                <td><?php  echo $Cine->getValor_entrada(); ?></td>
                               
                                 <td>
                                     <a class="btn btn-light" name="btnRemove">
@@ -73,6 +72,7 @@ include('header.php');
                                         </object>
                                     </a>
                                 </td>
+                                
                             </tr>
                                 <?php } ?>
 
@@ -101,7 +101,7 @@ include('header.php');
             <form class="modal-content" action="publish.php" method="POST">
 
                 <div class="modal-header">
-                    <h5 class="modal-title">Crear Post</h5>
+                    <h5 class="modal-title">Añadir Cine</h5>
                     <button type="button" class="close" data-dismiss="modal">
                         <span>&times;</span>
                     </button>
@@ -109,38 +109,29 @@ include('header.php');
 
                 <div class="modal-body">
 
-                    <div class="form-group">
-                        <label>Título</label>
-                        <input type="text" class="form-control" name="title" />
+                     <div class="form-group">
+                        <label>Id del Cine</label>
+                        <input type="text" class="form-control" name="ID" required>
                     </div>
 
                     <div class="form-group">
-                        <label>Autor</label>
-                        <input type="text" disabled value="<?php echo $user->getUserName(); ?>" class="form-control">
-                        <input type="hidden" name="author" value="<?php echo $user->getUserName(); ?>" class="form-control">
+                        <label>Nombre del Cine</label>
+                        <input type="text" class="form-control" name="title" required/>
                     </div>
 
                     <div class="form-group">
-                        <label>Categoría</label>
-                        <select type="text" class="form-control" name="category">
-                            <option value="1">Acción</option>
-                            <option value="2">Drama</option>
-                            <option value="3">Policiales</option>
-                            <option value="4">Documentales</option>
-                            <option value="5">Terror</option>
-                            <option value="6">Suspenso</option>
-                        </select>
-
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Fecha</label>
-                        <input type="date" class="form-control" name="date" />
+                        <label>Direccion</label>
+                        <input type="text" class="form-control" name="author" required>
                     </div>
 
                     <div class="form-group">
-                        <label>Texto</label>
-                        <textarea name="description" class="form-control"></textarea>
+                        <label>Valor de Entrada</label>
+                        <input type="number" class="form-control" name="category" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Capacidad</label>
+                        <input type="number" class="form-control" name="description" required>
                     </div>
 
                 </div>

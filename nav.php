@@ -8,10 +8,10 @@
         
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/examen_c1/posts.php">Posts</a>
+                <a class="nav-link" href="posts.php">Posts</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/examen_c1/index.php">Logout</a>
+                <a class="nav-link" href="index.php">Logout</a>
             </li>
         </ul>
         <span class="navbar-text text-white">

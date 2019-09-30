@@ -6,34 +6,34 @@ use Config\Autoload as Autoload;
 Autoload::Start();
 
 
-use models\Post as Post;
+use models\Cine as Cine;
 use repositories\PostsRepository as PostsRepository;
 
 
 if($_POST){
-    $newProd = new Post();
-    $newProd->setAuthor($_POST['author']);
-    $newProd->setTitle($_POST['title']);
-   // $newProd->setID($_POST['id']);
-   $newProd->setCategory($_POST['category']);
-    $newProd->setDate($_POST['date']);
-    $newProd->setDescription($_POST['description']);
+    $newProd = new Cine();
+    $newProd->setDireccion($_POST['author']);
+    $newProd->setNombre($_POST['title']);
+    $newProd->setID($_POST['ID']);
+   $newProd->setValor_entrada($_POST['category']);
+    //$newProd->setDate($_POST['date']);
+    $newProd->setCapacidad($_POST['description']);
 
    
     $repository = new PostsRepository();
   //  foreach($repository as $key => $value)
-  if($repository->getByID($newProd->getID())== false)
-    {
+ // if($repository->getByID($newProd->getID())== false)
+   // {
 	$repository->add($newProd);
-    echo "<script> alert('Producto agregado satisfactoriamente!');";
+    echo "<script> alert('Cine agregado satisfactoriamente!');";
     echo "window.location = 'posts.php'; </script>";
-    $successMje =  "Producto agregado satisfactoriamente!";
-    }
-  else
-   {
-       $errorMsj="Verifique que el producto no exista!";
-        echo "<script> alert('Verifique que el producto no exista!');";
-}
+    $successMje =  "Cine agregado satisfactoriamente!";
+   // }
+  //else
+   //{
+     //  $errorMsj="Verifique que el producto no exista!";
+   //     echo "<script> alert('Verifique que el producto no exista!');";
+//}
 //	echo "window.location = '../list.php'; </script>";
 }
 

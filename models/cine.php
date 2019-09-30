@@ -4,16 +4,26 @@ namespace models;
 
 class Cine {
 
+    private $ID;
     private $nombre;
     private $direccion;
     private $capacidad;
     private $valor_entrada;
 
-    function __construct ($nombre, $direccion, $capacidad, $valor_entrada){
+    function __construct (/*$ID ,$nombre, $direccion, $capacidad, $valor_entrada*/){
+        /*$this->ID = $ID;
         $this->nombre = $nombre;
         $this->direccion = $direccion;
         $this->capacidad = $capacidad;
-        $this->valor_entrada = $valor_entrada;
+        $this->valor_entrada = $valor_entrada;*/
+    }
+
+    public function getID (){
+        return $this->ID;
+    }
+
+    public function setID ($ID){
+        $this->ID = $ID;
     }
 
     public function getNombre (){

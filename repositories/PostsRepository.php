@@ -1,7 +1,7 @@
 <?php namespace repositories;
 
     use repositories\IRepository as IRepository;
-    use models\Post as Post;
+    use models\Cine as Cine;
 
     class PostsRepository implements IRepository
     {
@@ -38,11 +38,11 @@
             foreach($this->postsList as $post)
             {
                 $valuesArray["ID"] = $post->getID();
-                $valuesArray["title"] = $post->getTitle();
-                $valuesArray["author"] = $post->getAuthor();
-                $valuesArray["category"] = $post->getCategory();
-                $valuesArray["date"] = $post->getDate();
-                $valuesArray["description"] = $post->getDescription();
+                $valuesArray["title"] = $post->getNombre();
+                $valuesArray["author"] = $post->getDireccion();
+                $valuesArray["category"] = $post->getValor_entrada();
+                /*$valuesArray["date"] = $post->getDate();*/
+                $valuesArray["description"] = $post->getCapacidad();
 
                 array_push($arrayToEncode, $valuesArray);
             }
@@ -64,13 +64,13 @@
 
                 foreach($arrayToDecode as $valuesArray)
                 {
-                    $post = new Post();
+                    $post = new Cine();
                     $post->setID($valuesArray["ID"]);
-                    $post->setTitle($valuesArray["title"]);
-                    $post->setAuthor($valuesArray["author"]);
-                    $post->setCategory($valuesArray["category"]);
-                    $post->setDate($valuesArray["date"]);
-                    $post->setDescription($valuesArray["description"]);
+                    $post->setNombre($valuesArray["title"]);
+                    $post->setDireccion($valuesArray["author"]);
+                    $post->setValor_entrada($valuesArray["category"]);
+                    /*$post->setDate($valuesArray["date"]);*/
+                    $post->setCapacidad($valuesArray["description"]);
 
                     array_push($this->postsList, $post);
                 }
