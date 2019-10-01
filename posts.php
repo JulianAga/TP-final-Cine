@@ -10,11 +10,11 @@ include('header.php');
     <main class="p-5">
         <div class="container">
 
-            <h1 class="mb-5">CINEMAS</h1>
+            <h1 class="mb-5 align-middle"style="background-color: rgba(52, 189, 235,.7)">CINEMAS</h1>
 
 
             <form class="form-inline" action="multiaction.php" method="POST">
-
+<div class="p-3 mb-1 text-light" style="width:120% ;background-color: rgba(0,0,0,.7)">
                 <div class="form-group mb-4">
                     <button type="button" class="btn btn-light mr-4" data-toggle="modal" data-target="#create-post">
                         <object type="image/svg+xml" data="icons/plus.svg" width="16" height="16"></object>
@@ -78,6 +78,7 @@ include('header.php');
 
                     </tbody>
                 </table>
+                </div>
             </form>
 
             <!-- Esto como si no existiera -->
