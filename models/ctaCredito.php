@@ -14,6 +14,6 @@ class ctaCredito{
     }
 
     public function setEmpresa($empresa){
-        $this->empresa =empresa;
+        $this->empresa=$empresa;
     }
 }

@@ -12,12 +12,12 @@ use repositories\PostsRepository as PostsRepository;
 
 if($_POST){
     $newProd = new Cine();
-    $newProd->setDireccion($_POST['author']);
-    $newProd->setNombre($_POST['title']);
+    $newProd->setDireccion($_POST['direccion']);
+    $newProd->setNombre($_POST['cine']);
     $newProd->setID($_POST['ID']);
-   $newProd->setValor_entrada($_POST['category']);
+   $newProd->setValor_entrada($_POST['valor']);
     //$newProd->setDate($_POST['date']);
-    $newProd->setCapacidad($_POST['description']);
+    $newProd->setCapacidad($_POST['capacidad']);
 
    
     $repository = new PostsRepository();

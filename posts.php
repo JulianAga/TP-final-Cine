@@ -45,9 +45,9 @@ include('header.php');
                         </tr>
                     </thead>
                     <tbody>
-                    <?php $products = new PostsRepository();
+                    <?php $cines = new PostsRepository();
                    //$categories = new CategoriesRepository();
-                                       $productsArray = $products->getAll(); ?>
+                                       $productsArray = $cines->getAll(); ?>
 
                                 
                                 <?php foreach ($productsArray as $key => $value) {
@@ -117,22 +117,22 @@ include('header.php');
 
                     <div class="form-group">
                         <label>Nombre del Cine</label>
-                        <input type="text" class="form-control" name="title" required/>
+                        <input type="text" class="form-control" name="cine" required/>
                     </div>
 
                     <div class="form-group">
                         <label>Direccion</label>
-                        <input type="text" class="form-control" name="author" required>
+                        <input type="text" class="form-control" name="direccion" required>
                     </div>
 
                     <div class="form-group">
                         <label>Valor de Entrada</label>
-                        <input type="number" class="form-control" name="category" required>
+                        <input type="number" class="form-control" name="valor" required>
                     </div>
 
                     <div class="form-group">
                         <label>Capacidad</label>
-                        <input type="number" class="form-control" name="description" required>
+                        <input type="number" class="form-control" name="capacidad" required>
                     </div>
 
                 </div>
